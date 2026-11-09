@@ -1,43 +1,65 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 public class Movimiento_Enemigo : MonoBehaviour
 {
-    public NavMeshAgent enemigo;
-    public float rango;
+    public float velocidad_de_subida = 1f;
+    public float tiempo_subida = 10f;
+    public bool subiendo = false;
 
-    public Transform punto_central;
-
-
+    public bool bajando = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemigo = GetComponent<NavMeshAgent>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemigo.remainingDistance <= enemigo.stoppingDistance)
-        {
-            Vector3 point;
-            if(RandomPoint(punto_central.position, rango, out point))
-            {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
-                enemigo.SetDestination(point);
-            }
-        }
+
+
     }
 
-    bool RandomPoint(Vector3 centro, float range, out Vector3 resultado)
+    private IEnumerator SubirPortal()
     {
-        Vector3 punto_random = centro + Random.insideUnitSphere * range;
-        NavMeshHit hit;
-        if(NavMesh.SamplePosition(punto_random,out hit, 1.0f, NavMesh.AllAreas))
+        subiendo = true;
+        float time = 0f;
+        while(time < tiempo_subida)
         {
-            resultado = hit.position;
-            return true;
+            transform.Translate(Vector3.up * velocidad_de_subida * Time.deltaTime);
+
+            time += Time.deltaTime;
+            yield return null;
         }
-        resultado = Vector3.zero;
-        return false;
+        subiendo = false;
     }
+
+    private IEnumerator BajarPortal()
+    {
+        bajando = true;
+        float time = 0f;
+        while (time < tiempo_subida)
+        {
+            transform.Translate(Vector3.up * velocidad_de_subida * Time.deltaTime);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+        bajando = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("portal") && !subiendo)
+        {
+            StartCoroutine(SubirPortal());
+        }
+            
+
+    }
+
+
+
 }
+
