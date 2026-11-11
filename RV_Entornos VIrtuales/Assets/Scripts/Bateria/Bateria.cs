@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Bateria : MonoBehaviour
@@ -7,7 +8,7 @@ public class Bateria : MonoBehaviour
 
     public Linterna linternaScript;
 
-
+    private Coroutine cargando;
 
     public 
 
@@ -25,7 +26,7 @@ public class Bateria : MonoBehaviour
 
     public void descargar()
     {
-        if (cantidad_energia < 0)
+        if (cantidad_energia >= 0)
         {
             cantidad_energia -= 5;
         }
@@ -35,12 +36,40 @@ public class Bateria : MonoBehaviour
 
     public void cargar()
     {
-        while (linternaScript.cantidad > 100)
+        if (cargando == null)
+        {
+            cargando = StartCoroutine(tiempocarga());
+        }
+        /*
+        while (linternaScript.cantidad < 100)
         {
             descargar();
             linternaScript.cantidad += 2;
+        }*/
+    }
+
+    public void pausarcarga()
+    {
+        if(cargando != null)
+        {
+            StopCoroutine(tiempocarga());
+            cargando = null;
         }
-    }    
+    }
+
+
+    private IEnumerator tiempocarga()
+    {
+        while (linternaScript.cantidad < 100 && cantidad_energia > 0)
+        {
+            descargar();
+            linternaScript.cantidad += 2;
+            yield return new WaitForSeconds(0.5f);
+        }
+        cargando = null;
+    }
+
+
 
 }
 
