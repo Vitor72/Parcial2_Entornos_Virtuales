@@ -24,6 +24,7 @@ public class Movimiento_Enemigo : MonoBehaviour
     private IEnumerator SubirPortal()
     {
         subiendo = true;
+        bajando = false;
         float time = 0f;
         while(time < tiempo_subida)
         {
@@ -35,13 +36,14 @@ public class Movimiento_Enemigo : MonoBehaviour
         subiendo = false;
     }
 
-    private IEnumerator BajarPortal()
+    public IEnumerator BajarPortal()
     {
         bajando = true;
+        subiendo = false;
         float time = 0f;
         while (time < tiempo_subida)
         {
-            transform.Translate(Vector3.up * velocidad_de_subida * Time.deltaTime);
+            transform.Translate(Vector3.down * velocidad_de_subida * Time.deltaTime);
 
             time += Time.deltaTime;
             yield return null;
@@ -55,7 +57,6 @@ public class Movimiento_Enemigo : MonoBehaviour
         {
             StartCoroutine(SubirPortal());
         }
-            
 
     }
 

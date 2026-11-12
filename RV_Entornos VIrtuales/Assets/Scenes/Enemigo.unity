@@ -127,6 +127,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1266044790298183621, guid: 1fc5f8ad79570af45b241ec52321d12d, type: 3}
+      propertyPath: bajando
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266044790298183621, guid: 1fc5f8ad79570af45b241ec52321d12d, type: 3}
+      propertyPath: tiempo_subida
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266044790298183621, guid: 1fc5f8ad79570af45b241ec52321d12d, type: 3}
+      propertyPath: velocidad_de_subida
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5058099416287737281, guid: 1fc5f8ad79570af45b241ec52321d12d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.22557

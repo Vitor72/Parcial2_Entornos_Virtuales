@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7050560687461502086, guid: bd65e2050d71ba4489ad879146e33fd7, type: 3}
       propertyPath: m_Name
-      value: Objetos_juego_terror_VR_Linterna
+      value: Linterna
       objectReference: {fileID: 0}
     - target: {fileID: 7679568901764175420, guid: bd65e2050d71ba4489ad879146e33fd7, type: 3}
       propertyPath: m_LocalPosition.x
