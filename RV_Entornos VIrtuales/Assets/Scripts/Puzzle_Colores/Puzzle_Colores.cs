@@ -15,19 +15,22 @@ public class Puzzle_Colores : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(num == 12)
+        {
+            print("Ganaste");
+        }
     }
 
-    void SumarAzul()
+    public void SumarAzul()
     {
-        num
+        num += 1;
     }
-    void SumarRojo()
+    public void SumarRojo()
     {
-
+        num += 2;
     }
-    void SumarAmarilloojo()
+    public void SumarAmarilloojo()
     {
-
+        num += 3;
     }
 }
