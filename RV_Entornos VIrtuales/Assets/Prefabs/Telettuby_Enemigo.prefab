@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12.4
+      value: 15.600001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.4
+      value: 15.600001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12.4
+      value: 15.600001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.06
+      value: 5.6649947
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.658
+      value: 0.875
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.6919534
+      value: 0.2853332
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d5990876c8b1d2f4189ed807cbb5c49a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93bd700653e4e3940bb8dd7fc9d1f19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movimiento_Enemigo
-  velocidad_de_subida: 0.1
-  tiempo_subida: 15
+  velocidad_de_subida: 0.05
+  tiempo_subida: 45
   subiendo: 0
   bajando: 0

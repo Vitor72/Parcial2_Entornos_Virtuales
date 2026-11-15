@@ -6,6 +6,7 @@ TagManager:
   tags:
   - portal
   - manos
+  - limite
   layers:
   - Default
   - TransparentFX

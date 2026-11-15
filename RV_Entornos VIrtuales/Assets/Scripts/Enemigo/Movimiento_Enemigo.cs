@@ -3,11 +3,13 @@ using UnityEngine;
 using UnityEngine.AI;
 public class Movimiento_Enemigo : MonoBehaviour
 {
-    public float velocidad_de_subida = 1f;
-    public float tiempo_subida = 10f;
+    public float velocidad_de_subida = 0.001f;
+    public float tiempo_subida = 45f;
     public bool subiendo = false;
 
     public bool bajando = false;
+ 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,8 +19,6 @@ public class Movimiento_Enemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
     }
 
     private IEnumerator SubirPortal()
@@ -57,7 +57,10 @@ public class Movimiento_Enemigo : MonoBehaviour
         {
             StartCoroutine(SubirPortal());
         }
-
+        if(other.CompareTag("limite"))
+        {
+            print("game over");
+        }
     }
 
 

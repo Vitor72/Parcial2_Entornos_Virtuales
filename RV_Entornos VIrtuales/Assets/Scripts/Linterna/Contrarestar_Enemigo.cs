@@ -3,7 +3,7 @@ using UnityEngine;
 public class Contrarestar_Enemigo : MonoBehaviour
 {
     public Movimiento_Enemigo Enemigo;
-    private int rango = 28;
+    private int rango = 50;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
