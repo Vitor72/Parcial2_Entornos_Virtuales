@@ -8,7 +8,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Linterna : MonoBehaviour
 {
     public GameObject luz;
-
+    public GameObject raycast;
     public float cantidad = 100f;
     private bool luz_activada = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,6 +23,7 @@ public class Linterna : MonoBehaviour
         if(cantidad <= 0)
         {
             luz.SetActive(false);
+
         }
         if(luz_activada)
         {
@@ -36,11 +37,13 @@ public class Linterna : MonoBehaviour
         if (luz_activada == true && cantidad > 0)
         {
             luz.SetActive(true);
+            raycast.SetActive(true);
         }
     }
     public void Desactivar()
     {
         luz_activada = false;
         luz.SetActive(false);
+        raycast.SetActive(false);
     }    
 }
