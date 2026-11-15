@@ -1,6 +1,7 @@
-using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class Descarga_Baterias : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Descarga_Baterias : MonoBehaviour
 
     public Bateria_Generador_Grande bateria_pro;
     private Coroutine reduccion;
-
+    
     void Start()
     {
        

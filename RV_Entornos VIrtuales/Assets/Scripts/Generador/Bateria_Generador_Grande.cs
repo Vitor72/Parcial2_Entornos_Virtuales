@@ -5,6 +5,7 @@ using System.Collections;
 public class Bateria_Generador_Grande : MonoBehaviour
 {
     public int energia_pro_disponible = 150;
+    public Transform luz;
     private Coroutine descargando;
     void Start()
     {
@@ -30,7 +31,7 @@ public class Bateria_Generador_Grande : MonoBehaviour
         while (energia_pro_disponible > 0)
         {
             descargar();
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(3.5f);
         }
         descargando = null;
     }
@@ -39,7 +40,7 @@ public class Bateria_Generador_Grande : MonoBehaviour
     {
         if (energia_pro_disponible > 0)
         {
-            energia_pro_disponible -= 2;
+            energia_pro_disponible -= 1;
         }
     }
 

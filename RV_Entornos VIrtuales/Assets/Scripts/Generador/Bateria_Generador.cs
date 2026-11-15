@@ -4,6 +4,7 @@ using System.Collections;
 public class BateriaGenerador_pequeña : MonoBehaviour
 {
     public int energia_dispobible = 100;
+    public GameObject luz;
     private Coroutine descargando;
     void Start()
     {
@@ -13,10 +14,14 @@ public class BateriaGenerador_pequeña : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (energia_dispobible == 0)
+        {
+            luz.SetActive(false);
+        }
     }
     public void PausarDescarga()
     {
+        
         if (descargando != null)
         {
             StopCoroutine(TiempoDescarga());
@@ -29,7 +34,7 @@ public class BateriaGenerador_pequeña : MonoBehaviour
         while (energia_dispobible > 0)
         {
             descargar();
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.5f);
         }
         descargando = null;
     }
