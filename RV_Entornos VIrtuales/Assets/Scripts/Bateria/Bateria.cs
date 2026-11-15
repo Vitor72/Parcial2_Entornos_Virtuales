@@ -21,7 +21,7 @@ public class Bateria : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(cantidad_energia);
     }
 
     public void descargar()
