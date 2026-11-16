@@ -14,7 +14,7 @@ public class Movimiento_Enemigo : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        canvas.video.Prepare();
     }
 
     // Update is called once per frame
@@ -61,7 +61,6 @@ public class Movimiento_Enemigo : MonoBehaviour
         if(other.CompareTag("limite"))
         {
             canvas.Grito();
-          
         }
     }
 

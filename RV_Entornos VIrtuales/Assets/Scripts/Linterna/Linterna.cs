@@ -27,7 +27,7 @@ public class Linterna : MonoBehaviour
         }
         if(luz_activada)
         {
-            cantidad -= 1.0f * Time.deltaTime;
+            cantidad -= 0.5f * Time.deltaTime;
         }
         
     }
