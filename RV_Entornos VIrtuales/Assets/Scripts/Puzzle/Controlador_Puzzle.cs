@@ -1,6 +1,7 @@
 using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
@@ -12,7 +13,7 @@ public class Controlador_Puzzle : MonoBehaviour
     private bool ganaste = false;
     public XRSocketInteractor[] objetos;
 
-
+    public string victoria = "Victoria";
 
     void Start()
     {
@@ -45,6 +46,7 @@ public class Controlador_Puzzle : MonoBehaviour
         if(objetosPuestos >= objetos.Length)
         {
             ganaste = true;
+            SceneManager.LoadScene(victoria);
             print("GANASTE");
         }
 

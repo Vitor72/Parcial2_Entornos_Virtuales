@@ -29,7 +29,7 @@ public class Respawneo : MonoBehaviour
         {
             int randomx = Random.Range(min_pos, max_pos);
             int randomZ = Random.Range(min_posz, max_posz);
-            Vector3 posicionrandom = new Vector3(randomx, -0, randomZ);
+            Vector3 posicionrandom = new Vector3(randomx, -1, randomZ);
             Instantiate(enemigo, posicionrandom, enemigo.transform.rotation.normalized, punto_de_respawn.transform);
             
             yield return new WaitForSeconds(60.0f);

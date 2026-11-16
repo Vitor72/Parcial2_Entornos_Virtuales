@@ -5,7 +5,7 @@ using System.Collections;
 public class Bateria_Generador_Grande : MonoBehaviour
 {
     public int energia_pro_disponible = 150;
-    public Transform luz;
+    public Light luz;
     private Coroutine descargando;
     void Start()
     {
@@ -15,7 +15,10 @@ public class Bateria_Generador_Grande : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (energia_pro_disponible == 0)
+        {
+            luz.enabled = false;
+        }
     }
     public void PausarDescarga()
     {

@@ -4,7 +4,7 @@ using System.Collections;
 public class BateriaGenerador_pequeña : MonoBehaviour
 {
     public int energia_dispobible = 100;
-    public GameObject luz;
+    public Light luz;
     private Coroutine descargando;
     void Start()
     {
@@ -16,7 +16,7 @@ public class BateriaGenerador_pequeña : MonoBehaviour
     {
         if (energia_dispobible == 0)
         {
-            luz.SetActive(false);
+            luz.enabled = false;
         }
     }
     public void PausarDescarga()
